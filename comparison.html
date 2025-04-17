@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对比分析 - 学生体测数据分析系统</title>
+    <link rel="stylesheet" href="public/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>学生体测数据分析系统</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="data-analysis.html">数据分析</a></li>
+                    <li><a href="comparison.html" class="active">对比分析</a></li>
+                    <li><a href="trend.html">趋势分析</a></li>
+                    <li><a href="data-import.html">数据导入</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <section class="filter-section">
+                <div class="filter-group">
+                    <label for="year-select">选择年份：</label>
+                    <select id="year-select">
+                        <!-- 将通过JS动态填充 -->
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="gender-select">性别筛选：</label>
+                    <select id="gender-select">
+                        <option value="all">全部</option>
+                        <option value="男">男生</option>
+                        <option value="女">女生</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="comparison-type">对比类型：</label>
+                    <select id="comparison-type">
+                        <option value="college">学院对比</option>
+                        <option value="class">班级对比</option>
+                    </select>
+                </div>
+            </section>
+            
+            <section class="comparison-selection">
+                <div class="comparison-group" id="college-comparison-group">
+                    <div class="selection-container">
+                        <h3>学院一</h3>
+                        <select id="college-one-select">
+                            <!-- 将通过JS动态填充 -->
+                        </select>
+                    </div>
+                    <div class="selection-container">
+                        <h3>学院二</h3>
+                        <select id="college-two-select">
+                            <!-- 将通过JS动态填充 -->
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="comparison-group" id="class-comparison-group" style="display: none;">
+                    <div class="selection-container">
+                        <h3>班级一</h3>
+                        <div class="filter-row">
+                            <select id="college-for-class-one">
+                                <!-- 将通过JS动态填充学院列表 -->
+                            </select>
+                            <select id="class-one-select">
+                                <!-- 将通过JS动态填充班级列表 -->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="selection-container">
+                        <h3>班级二</h3>
+                        <div class="filter-row">
+                            <select id="college-for-class-two">
+                                <!-- 将通过JS动态填充学院列表 -->
+                            </select>
+                            <select id="class-two-select">
+                                <!-- 将通过JS动态填充班级列表 -->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="compare-button">进行对比</button>
+            </section>
+            
+            <section class="comparison-results">
+                <div class="stat-cards">
+                    <div class="stat-card">
+                        <h3>项目一合格率</h3>
+                        <div class="pass-rate-comparison">
+                            <div class="pass-rate-item">
+                                <span class="item-label" id="item-one-label">--</span>
+                                <span class="item-value" id="item-one-pass-rate">--</span>
+                            </div>
+                            <div class="pass-rate-item">
+                                <span class="item-label" id="item-two-label">--</span>
+                                <span class="item-value" id="item-two-pass-rate">--</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <div class="chart" id="comparison-radar-chart">
+                        <!-- 对比雷达图 -->
+                    </div>
+                </div>
+                
+                <div class="chart-row">
+                    <div class="chart" id="comparison-bar-chart">
+                        <!-- 分项对比柱状图 -->
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 学生体测数据分析系统</p>
+        </footer>
+    </div>
+    
+    <script src="public/js/common.js"></script>
+    <script src="public/js/comparison.js"></script>
+</body>
+</html> 

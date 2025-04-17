@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据导入 - 学生体测数据分析系统</title>
+    <link rel="stylesheet" href="public/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>学生体测数据分析系统</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="data-analysis.html">数据分析</a></li>
+                    <li><a href="comparison.html">对比分析</a></li>
+                    <li><a href="trend.html">趋势分析</a></li>
+                    <li><a href="data-import.html" class="active">数据导入</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <section class="import-section">
+                <h2>数据导入</h2>
+                <div class="import-form">
+                    <div class="form-group">
+                        <label for="import-year">年份</label>
+                        <input type="number" id="import-year" min="2000" max="2099" placeholder="请输入年份">
+                    </div>
+                    <div class="form-group">
+                        <label for="excel-file">Excel文件</label>
+                        <input type="file" id="excel-file" accept=".xlsx,.xls">
+                    </div>
+                    <button id="import-button" class="primary-button">导入数据</button>
+                </div>
+                
+                <div id="import-status" class="status-message"></div>
+                
+                <div class="preview-container">
+                    <h3>数据预览</h3>
+                    <div id="data-preview" class="data-table-container">
+                        <table id="preview-table">
+                            <thead>
+                                <tr>
+                                    <th>年级</th>
+                                    <th>院系</th>
+                                    <th>学籍号</th>
+                                    <th>姓名</th>
+                                    <th>性别</th>
+                                    <th>总分</th>
+                                    <!-- 表头将通过JS动态生成 -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- 数据将通过JS动态生成 -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="manage-data-section">
+                <h2>数据管理</h2>
+                <div class="data-years">
+                    <h3>已导入的年份数据</h3>
+                    <div id="years-container" class="years-list">
+                        <!-- 通过JS动态生成 -->
+                    </div>
+                </div>
+                
+                <h3>数据日志</h3>
+                <div id="log-container" class="log-container">
+                    <!-- 通过JS动态生成 -->
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 学生体测数据分析系统</p>
+        </footer>
+    </div>
+    
+    <script src="public/js/common.js"></script>
+    <script src="public/js/data-import.js"></script>
+</body>
+</html> 

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据分析 - 学生体测数据分析系统</title>
+    <link rel="stylesheet" href="public/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>学生体测数据分析系统</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="data-analysis.html" class="active">数据分析</a></li>
+                    <li><a href="comparison.html">对比分析</a></li>
+                    <li><a href="trend.html">趋势分析</a></li>
+                    <li><a href="data-import.html">数据导入</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <section class="filter-section">
+                <div class="filter-group">
+                    <label for="year-select">选择年份：</label>
+                    <select id="year-select">
+                        <!-- 将通过JS动态填充 -->
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="gender-select">性别筛选：</label>
+                    <select id="gender-select">
+                        <option value="all">全部</option>
+                        <option value="男">男生</option>
+                        <option value="女">女生</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="scope-select">查看范围：</label>
+                    <select id="scope-select">
+                        <option value="college">学院</option>
+                        <option value="class">班级</option>
+                    </select>
+                </div>
+                <div class="filter-group" id="college-filter-group">
+                    <label for="college-select">选择学院：</label>
+                    <select id="college-select">
+                        <!-- 将通过JS动态填充 -->
+                    </select>
+                </div>
+                <div class="filter-group" id="class-filter-group" style="display: none;">
+                    <label for="class-select">选择班级：</label>
+                    <select id="class-select">
+                        <!-- 将通过JS动态填充 -->
+                    </select>
+                </div>
+            </section>
+            
+            <section class="dashboard">
+                <div class="stat-cards">
+                    <div class="stat-card">
+                        <h3>合格率</h3>
+                        <div class="stat-value" id="pass-rate">--</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>平均分</h3>
+                        <div class="stat-value" id="average-score">--</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>学生总数</h3>
+                        <div class="stat-value" id="student-count">--</div>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <div class="chart" id="radar-chart">
+                        <!-- 雷达图 -->
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <div class="chart" id="boxplot-chart">
+                        <!-- 盒须图 -->
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 学生体测数据分析系统</p>
+        </footer>
+    </div>
+    
+    <script src="public/js/common.js"></script>
+    <script src="public/js/data-analysis.js"></script>
+</body>
+</html> 

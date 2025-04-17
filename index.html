@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生体测数据分析系统</title>
+    <link rel="stylesheet" href="public/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>学生体测数据分析系统</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">首页</a></li>
+                    <li><a href="data-analysis.html">数据分析</a></li>
+                    <li><a href="comparison.html">对比分析</a></li>
+                    <li><a href="trend.html">趋势分析</a></li>
+                    <li><a href="data-import.html">数据导入</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <section class="filter-section">
+                <div class="filter-group">
+                    <label for="year-select">选择年份：</label>
+                    <select id="year-select">
+                        <!-- 将通过JS动态填充 -->
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="gender-select">性别筛选：</label>
+                    <select id="gender-select">
+                        <option value="all">全部</option>
+                        <option value="男">男生</option>
+                        <option value="女">女生</option>
+                    </select>
+                </div>
+            </section>
+            
+            <section class="dashboard">
+                <div class="stat-cards">
+                    <div class="stat-card">
+                        <h3>总体合格率</h3>
+                        <div class="stat-value" id="overall-pass-rate">--</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>男生合格率</h3>
+                        <div class="stat-value" id="male-pass-rate">--</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>女生合格率</h3>
+                        <div class="stat-value" id="female-pass-rate">--</div>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <div class="chart" id="radar-chart">
+                        <!-- 雷达图 -->
+                    </div>
+                </div>
+                
+                <div class="chart-row">
+                    <div class="chart" id="college-pass-rate">
+                        <!-- 学院合格率矩形树图 -->
+                    </div>
+                    <div class="chart" id="item-pass-rate">
+                        <!-- 项目合格率矩形树图 -->
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 学生体测数据分析系统</p>
+        </footer>
+    </div>
+    
+    <script src="public/js/common.js"></script>
+    <script src="public/js/index.js"></script>
+</body>
+</html> 
